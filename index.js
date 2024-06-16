@@ -6,7 +6,7 @@ let shiftPressed = false;
 let shiftJustReleased = false;
 
 function move(e) {
-  if (shiftJustReleased && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
+  if (shiftJustReleased && (e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key==="Shift")) {
     selectedDivs.forEach((div) => {
       div.classList.remove("selected");
     });
@@ -74,7 +74,6 @@ document.addEventListener("keydown", (e) => {
   } else if (e.key === "Shift") {
     shiftPressed = true;
     startShiftIndex = currentIndex;
-    selectedDivs[currentIndex].classList.add("selected");
   }
   move(e);
 });
