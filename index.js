@@ -3,8 +3,15 @@ const selectedDivs = document.querySelectorAll(".selectDiv");
 let currentIndex = 0;
 let ctrlPressed = false;
 let shiftPressed = false;
+let shiftJustReleased = false;
 
 function move(e) {
+  if (shiftJustReleased && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
+    selectedDivs.forEach((div) => {
+      div.classList.remove("selected");
+    });
+    shiftJustReleased = false;
+  }
   if (ctrlPressed) {
     if (e.key === "ArrowLeft" && currentIndex > 0) {
       selectedDivs[currentIndex].classList.remove("indexStyle");
@@ -68,17 +75,16 @@ document.addEventListener("keydown", (e) => {
     shiftPressed = true;
     startShiftIndex = currentIndex;
     selectedDivs[currentIndex].classList.add("selected");
-  } else move(e);
+  }
+  move(e);
 });
 
 document.addEventListener("keyup", (e) => {
   if (e.key === "Control") {
     ctrlPressed = false;
   } else if (e.key === "Shift") {
-// see thisss when shift is released is a problem
-     selectedDivs[currentIndex].classList.add("indexStyle");
-     shiftPressed = false;
-
+    shiftPressed = false;
+    shiftJustReleased = true;
   }
 });
 

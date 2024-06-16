@@ -1,0 +1,46 @@
+Ne html krijoj nje container dhe brenda tij krijoj 6 div-e.
+CSS: Pozicionoj div-et duke perdorur display:flex. Dhe shtoj stilizime per secilin div si backgroundcolor
+height width.
+Gjithashtu krijoj edhe 2 klasa te cilat do i perdor ne js si .indexStyle per te stilizuar divin ne indeksin aktual
+dhe .selected qe percakton stilin e divit te selektuar.
+
+JS:Me duhet te realizoj logjiken e ctrl dhe shiftit. Pra nese une bej ctrl dhe klikoj div-et qe une dua atehere ato div-e duhet te stilizohen me klasen
+selected. Ndersa nese une bej shift nga 1 indeks i caktuar dhe leviz majtas/djathtas te gjithe keto div-e derisa leshoj shift duhen te stilizohen.
+
+Kam menduar 3 eventlistener si keydown keyup dhe click, kur bej event keydown une kontrolloj nese key i vendosur nga tastjera eshte Control
+ose Shift. Kur bej keyup kontrolloj cili buton nuk eshte duke u shtypur me ne tastjere.
+Ndersa nese bej click jashte containerit une bej reload te faqes.
+
+
+Eventi keydown
+nese key qe shkakton eventin eshte Control une ctrlPressed i jap vlere true, 
+perndryshe i jap true shiftPressed dhe inicializoj startIndex si currentIndex. 
+
+Kam realizuar funksionin move i cili kontrollon nese eshte klikuar Control, Shift apo anje nga keto dy.
+Nese nuk eshte klikuar asnje, une leviz neper div-e me LeftArrow dhe RightArrow dhe selektoj div-in ne indeksin aktual.
+Pra nese leviz majtas dhe nuk kam arritur ne indeksion 0, heq klasen selected nga div, dekrementoj indeksin dhe divit ne kete indeks i aplikoj 
+klasen selected, me te njejten logjike edhe per levizjen djathtas(bej inkrement).
+
+Duke perdorur ctrl dhe duke klikuar mbi divet qe une dua, mund te selektoj disa dive njekohesisht.
+Nese kam klikuar ctrl dhe dua te bej dhe levizje majtas/djathtas per te selektuar disa dive njekohesisht, une leviz neper dive dhe nepermjet
+klases indexStyle une stilizoj divet ne menyre te tille qe te kuptoj indeksin ku ndodhem, por nuk e kam selektuar kete div pasi per ta selektuar
+nese kam bere ctrl me duhet edhe click mbi divin e perzgjedhur. 
+Pra nese une klikoj tek nje div qe deshiroj atehere une e selektoj ate dhe i vendos klasen selected duke vendosur addEventListener
+per secilin div te containerit dhe si currentIndex vendos indexin e divit qe i vendosa eventListener.
+Ne kete menyre une mund te selektoj div-et ne indekset qe deshiroj njekohesisht.
+
+Nese butoni i tastjeres qe shkaktoi eventin keydown eshte Shift, divin ne ate indeks e selektoj,
+dhe duke levizur majtas djathtas me duhet te stilizoj te gjithe divet e tjera ndermjet derisa te leshoj shift.
+Pra nese shift eshte pressed, dhe leviz majtas, dekrementoj indeksin sa here klikoj LeftArrow
+dhe me nje for loop qe nga startIndex deri tek currentindex dive-eve u vendos klasen selected.Gjithashtu sigurohem qe te heq klasen .selected per divet deri tek
+indexi start, ne menyre qe nese eci majtas, dhe me pare kam bere shift nga startIndeks deri ne 2 dive djththas, kur te eci mjatas tani 2 divet ne te djethte
+do u hiqet klasa .selected, dhe divi ne indeksin start do e ruaje ate.
+Nese klikoj djathtas kur kam shiftin e klikuar, inkrementoj indeksin dhe qe nga startIndex deri tek currentIndeksi vendos klasen selected. Nese me pare une kam bere shift dhe kam ecuar 2 dive majtas, 
+nese tani eci djathtas per tek startIndeks, ato dy dive deri tek indeksi start me duhet te mos i selektoj me prandaj u heq klasen selected.
+Pra me shift une gjej divin ku shifti u be pressed fillimisht dhe e ruaj si startShift dhe duke levizur majtas apo djththas
+percaktoj edhe indeksin aktual ku dua te shkoj, ne kete menyre me for loop div-et ndermjet ketyre 2 indekseve i selektoj dhe stilizoj.
+
+
+Pasi leshoj shiftin divet e selektuara duhen te mbeten te tilla, por nese une klikoj majtas apo djathtas te mos shtoj div te ri, por te kaloj tek indeksi i ri
+dhe divet e selektuara te mos shfaqen me. Per kete perdror nje variabel tjeter. Dhe kontrolloj nese variabli shiftJustReleased ka vlere true dhe eshte klikuar butoni
+majtas ose djathtas, une heq klasen .selected nga te gjithe divet qe kane ate dhe i bej reset variablit.
