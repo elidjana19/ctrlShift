@@ -33,14 +33,17 @@ Nese butoni i tastjeres qe shkaktoi eventin keydown eshte Shift, divin ne ate in
 dhe duke levizur majtas djathtas me duhet te stilizoj te gjithe divet e tjera ndermjet derisa te leshoj shift.
 Pra nese shift eshte pressed, dhe leviz majtas, dekrementoj indeksin sa here klikoj LeftArrow
 dhe me nje for loop qe nga startIndex deri tek currentindex dive-eve u vendos klasen selected.Gjithashtu sigurohem qe te heq klasen .selected per divet deri tek
-indexi start, ne menyre qe nese eci majtas, dhe me pare kam bere shift nga startIndeks deri ne 2 dive djththas, kur te eci mjatas tani 2 divet ne te djethte
+indexi start, ne menyre qe nese eci majtas, dhe me pare kam bere shift nga startIndeks deri ne 2 dive djththas, kur te eci majtas tani 2 divet ne te djethte
 do u hiqet klasa .selected, dhe divi ne indeksin start do e ruaje ate.
 Nese klikoj djathtas kur kam shiftin e klikuar, inkrementoj indeksin dhe qe nga startIndex deri tek currentIndeksi vendos klasen selected. Nese me pare une kam bere shift dhe kam ecuar 2 dive majtas, 
 nese tani eci djathtas per tek startIndeks, ato dy dive deri tek indeksi start me duhet te mos i selektoj me prandaj u heq klasen selected.
-Pra me shift une gjej divin ku shifti u be pressed fillimisht dhe e ruaj si startShift dhe duke levizur majtas apo djththas
+Pra me shift une gjej divin ku shifti u be pressed fillimisht dhe e ruaj si startShift dhe duke levizur majtas apo djathtas
 percaktoj edhe indeksin aktual ku dua te shkoj, ne kete menyre me for loop div-et ndermjet ketyre 2 indekseve i selektoj dhe stilizoj.
 
 
 Pasi leshoj shiftin divet e selektuara duhen te mbeten te tilla, por nese une klikoj majtas apo djathtas te mos shtoj div te ri, por te kaloj tek indeksi i ri
 dhe divet e selektuara te mos shfaqen me. Per kete perdror nje variabel tjeter. Dhe kontrolloj nese variabli shiftJustReleased ka vlere true dhe eshte klikuar butoni
 majtas ose djathtas, une heq klasen .selected nga te gjithe divet qe kane ate dhe i bej reset variablit.
+Te njejten gje e bej edhe per Control, nese une leshoj Control, me duhet qe divet e selektuara te mbeten te tilla, por nese une klikoj nge key tjeter nga tastjera divet e selektuara te behen reset
+dhe indeksi te kaloje tek divi pasardhes, prandaj perdor nje variabel ctrlReleased, dhe me id kontrolloj nese kjo variable eshte true && nese nje tab klikohet nga tastjera
+une heq klasen selected nga divet. 
