@@ -5,12 +5,21 @@ let ctrlPressed = false;
 let shiftPressed = false;
 let shiftJustReleased = false;
 
+let ctrlReleased=false
+
 function move(e) {
   if (shiftJustReleased && (e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key==="Shift")) {
     selectedDivs.forEach((div) => {
       div.classList.remove("selected");
     });
     shiftJustReleased = false;
+  }
+
+  if(ctrlReleased && e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key==="Control" ){
+    selectedDivs.forEach((div) => {
+      div.classList.remove("selected");
+    });
+    ctrlReleased = false;
   }
   if (ctrlPressed) {
     if (e.key === "ArrowLeft" && currentIndex > 0) {
@@ -81,6 +90,7 @@ document.addEventListener("keydown", (e) => {
 document.addEventListener("keyup", (e) => {
   if (e.key === "Control") {
     ctrlPressed = false;
+    ctrlReleased=true;
   } else if (e.key === "Shift") {
     shiftPressed = false;
     shiftJustReleased = true;
