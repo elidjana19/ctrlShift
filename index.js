@@ -15,12 +15,13 @@ function move(e) {
     shiftJustReleased = false;
   }
 
-  if(ctrlReleased && e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key==="Control" ){
+  if(ctrlReleased && (e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key==="Control" )){
     selectedDivs.forEach((div) => {
       div.classList.remove("selected");
     });
     ctrlReleased = false;
   }
+
   if (ctrlPressed) {
     if (e.key === "ArrowLeft" && currentIndex > 0) {
       selectedDivs[currentIndex].classList.remove("indexStyle");
