@@ -45,5 +45,5 @@ Pasi leshoj shiftin divet e selektuara duhen te mbeten te tilla, por nese une kl
 dhe divet e selektuara te mos shfaqen me. Per kete perdror nje variabel tjeter. Dhe kontrolloj nese variabli shiftJustReleased ka vlere true dhe eshte klikuar butoni
 majtas ose djathtas, une heq klasen .selected nga te gjithe divet qe kane ate dhe i bej reset variablit.
 Te njejten gje e bej edhe per Control, nese une leshoj Control, me duhet qe divet e selektuara te mbeten te tilla, por nese une klikoj nge key tjeter nga tastjera divet e selektuara te behen reset
-dhe indeksi te kaloje tek divi pasardhes, prandaj perdor nje variabel ctrlReleased, dhe me id kontrolloj nese kjo variable eshte true && nese nje tab klikohet nga tastjera
+dhe indeksi te kaloje tek divi pasardhes apo paraardhesi ne varesi te arrow te klikuar, prandaj perdor nje variabel ctrlReleased, dhe me id kontrolloj nese kjo variable eshte true && nese nje tab klikohet nga tastjera
 une heq klasen selected nga divet. 
